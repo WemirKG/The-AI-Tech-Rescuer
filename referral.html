@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Referrals | The AI Tech Rescuer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <a class="logo" href="index.html"><span class="logo-square"></span> THE&nbsp;AI&nbsp;TECH&nbsp;RESCUER</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="testimonials.html">Testimonials</a>
+    </div>
+  </nav>
+
+  <section>
+    <h2>Referral&nbsp;Form</h2>
+    <p class="lead">If a friend sent you our way, let us know below so we can thank them properly!</p>
+
+    <form id="refForm">
+      <div>
+        <label>Your&nbsp;Name</label>
+        <input id="yourName" placeholder="Jane Doe" required />
+      </div>
+      <div>
+        <label>Your&nbsp;Email&nbsp;or&nbsp;Phone</label>
+        <input id="yourContact" placeholder="jane@email.com" required />
+      </div>
+      <div>
+        <label>Referrer&nbsp;Name (optional)</label>
+        <input id="refName" placeholder="Who told you about us?" />
+      </div>
+      <div>
+        <label>Referrer&nbsp;Contact (optional)</label>
+        <input id="refContact" placeholder="Email or phone" />
+      </div>
+      <div>
+        <label>What&nbsp;do&nbsp;you&nbsp;need&nbsp;help&nbsp;with?</label>
+        <textarea id="refMessage" placeholder="Short description…"></textarea>
+      </div>
+      <button class="btn primary" type="submit">Save&nbsp;Info&nbsp;Locally</button>
+    </form>
+  </section>
+
+  <footer>© <span id="year"></span> The AI Tech Rescuer.</footer>
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+    const f=document.getElementById('refForm');
+    const LS_KEY='atr_referral';
+    function load(){try{const d=JSON.parse(localStorage.getItem(LS_KEY)||'{}');for(const k in d){const el=document.getElementById(k);if(el)el.value=d[k];}}catch(e){} }
+    load();
+    f.addEventListener('submit',e=>{e.preventDefault();const data={yourName:f.yourName.value,yourContact:f.yourContact.value,refName:f.refName.value,refContact:f.refContact.value,refMessage:f.refMessage.value};localStorage.setItem(LS_KEY,JSON.stringify(data));alert('Saved locally! Feel free to close this tab.');});
+  </script>
+</body>
+</html>
