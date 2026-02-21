@@ -16,36 +16,55 @@
     </div>
   </nav>
 
-  <section>
-    <h2>Referral&nbsp;Form</h2>
-    <p class="lead">If a friend sent you our way, let us know below so we can thank them properly!</p>
+ <section>
+  <h2>Referral&nbsp;Form</h2>
+  <p class="lead">
+    If a friend sent you our way, let us know below so we can thank them properly!
+  </p>
 
-    <form id="refForm"
+  <form id="refForm"
         action="https://formspree.io/f/mzdaanbo"
         method="POST">
-      <div>
-        <label>Your&nbsp;Name</label>
-        <input id="yourName" placeholder="Jane Doe" required />
-      </div>
-      <div>
-        <label>Your&nbsp;Email&nbsp;or&nbsp;Phone</label>
-        <input id="yourContact" placeholder="jane@email.com" required />
-      </div>
-      <div>
-        <label>Referrer&nbsp;Name (optional)</label>
-        <input id="refName" placeholder="Who told you about us?" />
-      </div>
-      <div>
-        <label>Referrer&nbsp;Contact (optional)</label>
-        <input id="refContact" placeholder="Email or phone" />
-      </div>
-      <div>
-        <label>What&nbsp;did&nbsp;you&nbsp;need&nbsp;help&nbsp;with?</label>
-        <textarea id="refMessage" placeholder="Short description…"></textarea>
-      </div>
-      <button class="btn primary" type="submit">Save&nbsp;Info&nbsp;Locally</button>
-    </form>
-  </section>
+    <div>
+      <label>Your&nbsp;Name
+        <input type="text" name="name" id="yourName"
+               placeholder="Jane Doe" required>
+      </label>
+    </div>
+
+    <div>
+      <label>Your&nbsp;Email&nbsp;or&nbsp;Phone
+        <input type="text" name="contact" id="yourContact"
+               placeholder="jane@email.com or (555) 555-5555" required>
+      </label>
+    </div>
+
+    <div>
+      <label>Referrer&nbsp;Name&nbsp;(optional)
+        <input type="text" name="referrer_name" id="refName"
+               placeholder="Who told you about us?">
+      </label>
+    </div>
+
+    <div>
+      <label>Referrer&nbsp;Contact&nbsp;(optional)
+        <input type="text" name="referrer_contact" id="refContact"
+               placeholder="Email or phone">
+      </label>
+    </div>
+
+    <div>
+      <label>What&nbsp;do&nbsp;you&nbsp;need&nbsp;help&nbsp;with?
+        <textarea name="message" id="refMessage"
+                  placeholder="Short description…"></textarea>
+      </label>
+    </div>
+
+    <button class="btn primary" type="submit">
+      Send&nbsp;Referral
+    </button>
+  </form>
+</section>
 
   <footer>© <span id="year"></span> The AI Tech Rescuer.</footer>
   <script>
