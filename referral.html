@@ -71,9 +71,6 @@
     document.getElementById('year').textContent=new Date().getFullYear();
     const f=document.getElementById('refForm');
     const LS_KEY='atr_referral';
-    function load(){try{const d=JSON.parse(localStorage.getItem(LS_KEY)||'{}');for(const k in d){const el=document.getElementById(k);if(el)el.value=d[k];}}catch(e){} }
-    load();
-    f.addEventListener('submit',e=>{e.preventDefault();const data={yourName:f.yourName.value,yourContact:f.yourContact.value,refName:f.refName.value,refContact:f.refContact.value,refMessage:f.refMessage.value};localStorage.setItem(LS_KEY,JSON.stringify(data));alert('Saved locally! Feel free to close this tab.');});
   </script>
   <!-- Calendly badge widget begin -->
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
